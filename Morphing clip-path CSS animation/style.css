@@ -1,0 +1,171 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #222;
+  margin: 0;
+  backface-visibility: hidden;
+}
+
+div {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 10px solid #ffb300;
+  animation: sha-boo-boo 5s ease infinite;
+  animation-direction: alternate-reverse;
+}
+
+g {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: sha-boo-boo 10s ease-in-out infinite;
+}
+
+body > g {
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation-direction: reverse;
+  width: 420px;
+  height: 420px;
+}
+
+g > g {
+  -webkit-clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    30% 50%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    80% 100%,
+    100% 80%,
+    70% 50%,
+    100% 20%,
+    80% 0%,
+    50% 30%
+  );
+  clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    30% 50%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    80% 100%,
+    100% 80%,
+    70% 50%,
+    100% 20%,
+    80% 0%,
+    50% 30%
+  );
+  background: #ffb300;
+  animation: sha-boo-boo 15s ease infinite;
+}
+
+g > g:nth-child(2) {
+  -webkit-clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    15% 100%,
+    16% 15%,
+    85% 15%,
+    85% 85%,
+    15% 85%,
+    15% 100%,
+    100% 100%,
+    100% 0%
+  );
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    15% 100%,
+    15% 15%,
+    85% 15%,
+    85% 85%,
+    15% 85%,
+    15% 100%,
+    100% 100%,
+    100% 0%
+  );
+  background: #222;
+  animation-direction: alternate;
+}
+
+g > g > g > g > g:nth-child(2) {
+  background: conic-gradient(
+    from 135deg at 50% 50%,
+    #002aff,
+    #1800ff,
+    #5b00ff,
+    #9d00ff,
+    #e000ff,
+    #ff00dc,
+    #ff0099,
+    #ff0057,
+    #ff0014,
+    #ff2e00,
+    #ff7100,
+    #ffb300
+  );
+  -webkit-clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    30% 50%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    80% 100%,
+    100% 80%,
+    70% 50%,
+    100% 20%,
+    80% 0%,
+    50% 30%
+  );
+  clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    30% 50%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    80% 100%,
+    100% 80%,
+    70% 50%,
+    100% 20%,
+    80% 0%,
+    50% 30%
+  );
+  animation-direction: alternate-reverse;
+}
+
+@keyframes sha-boo-boo {
+  0% {
+    transform: rotateZ(0deg);
+    border-radius: 50%;
+    background-size: 100%;
+    background-position: center;
+  }
+  50% {
+    border-radius: 0%;
+    background-size: 70%;
+    background-position: center;
+  }
+  100% {
+    transform: rotateZ(360deg);
+    border-radius: 50%;
+    background-size: 100%;
+    background-position: center;
+  }
+}
